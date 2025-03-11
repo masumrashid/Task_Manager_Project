@@ -12,13 +12,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _moveTologinScreen();
-  }
-
   Future<void> _moveTologinScreen() async {
     await Future.delayed(const Duration(seconds: 2));
     Navigator.pushReplacement(
@@ -31,5 +24,12 @@ class _SplashScreenState extends State<SplashScreen> {
         body: ScreenBackground(
       child: Center(child: SvgPicture.asset(width: 120, AssetsPath.logoSvg)),
     ));
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _moveTologinScreen();
   }
 }
