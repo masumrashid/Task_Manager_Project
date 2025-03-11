@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:task_manager/ui/screens/login_screen.dart';
 import 'package:task_manager/ui/widgets/screen_background.dart';
 
 class ResetPassword extends StatefulWidget {
@@ -102,11 +103,21 @@ class _ResetPasswordState extends State<ResetPassword> {
     );
   }
 
-  void _onTabSubmitButton() {}
+  void _onTabSubmitButton() {
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => loginScreen()),
+          (pre) => false,
+    );
+  }
 
 
   void _onTapSigninButton() {
-    Navigator.pop(context);
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => loginScreen()),
+          (pre) => false,
+    );
   }
 
   @override
