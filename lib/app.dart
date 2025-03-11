@@ -11,7 +11,7 @@ class TaskManagerApp extends StatelessWidget {
       theme: ThemeData(
           colorSchemeSeed: Colors.green,
           inputDecorationTheme: InputDecorationTheme(
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
               fontSize: 16,
               color: Colors.grey,
               fontWeight: FontWeight.bold,
