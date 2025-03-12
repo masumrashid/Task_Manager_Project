@@ -85,7 +85,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     TextFormField(
                       controller: _passwordlController,
-                      obscureText: !_passwordVisible,
+                      obscureText: _passwordVisible,
                       decoration: InputDecoration(
                         hintText: 'Password',
                         suffixIcon: IconButton(
