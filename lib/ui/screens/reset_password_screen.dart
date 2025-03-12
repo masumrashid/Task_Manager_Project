@@ -11,6 +11,10 @@ class ResetPassword extends StatefulWidget {
 }
 
 class _ResetPasswordState extends State<ResetPassword> {
+
+  bool _passwordVisible1 = true;
+  bool _passwordVisible2 = true;
+
   final TextEditingController _newPasswordlController = TextEditingController();
   final TextEditingController _confirmPasswordlController = TextEditingController();
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
@@ -51,9 +55,21 @@ class _ResetPasswordState extends State<ResetPassword> {
                   TextFormField(
                     controller: _newPasswordlController,
                     textInputAction: TextInputAction.next,
+                    obscureText: !_passwordVisible1,
 
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       hintText: 'New Password',
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _passwordVisible1 ? Icons.visibility : Icons.visibility_off,
+                          color: Theme.of(context).primaryColorDark,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _passwordVisible1 = !_passwordVisible1;
+                          });
+                        },
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -61,8 +77,20 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
                   TextFormField(
                     controller: _confirmPasswordlController,
-                    decoration: const InputDecoration(
+                    obscureText: !_passwordVisible2,
+                    decoration: InputDecoration(
                       hintText: 'Confirm Password',
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _passwordVisible2 ? Icons.visibility : Icons.visibility_off,
+                          color: Theme.of(context).primaryColorDark,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _passwordVisible2 = !_passwordVisible2;
+                          });
+                        },
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -118,6 +146,14 @@ class _ResetPasswordState extends State<ResetPassword> {
       MaterialPageRoute(builder: (context) => loginScreen()),
           (pre) => false,
     );
+  }
+
+
+  @override
+  void initState() {
+    _passwordVisible1 = false;
+    _passwordVisible2 = false;
+    super.initState();
   }
 
   @override

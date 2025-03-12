@@ -12,6 +12,8 @@ class loginScreen extends StatefulWidget {
 }
 
 class _loginScreenState extends State<loginScreen> {
+  bool _passwordVisible=true;
+
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordlController = TextEditingController();
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
@@ -51,8 +53,20 @@ class _loginScreenState extends State<loginScreen> {
                   ),
                   TextFormField(
                     controller: _passwordlController,
-                    decoration: const InputDecoration(
+                    obscureText: !_passwordVisible,
+                    decoration: InputDecoration(
                       hintText: 'Password',
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                          color: Theme.of(context).primaryColorDark,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _passwordVisible = !_passwordVisible;
+                          });
+                        },
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -112,6 +126,13 @@ class _loginScreenState extends State<loginScreen> {
   void _onTapSigninButton() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => RegisterScreen()));
+  }
+
+
+  @override
+  void initState() {
+    _passwordVisible = false;
+    super.initState();
   }
 
   @override
