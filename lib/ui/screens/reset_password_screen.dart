@@ -54,7 +54,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   TextFormField(
                     controller: _newPasswordlController,
                     textInputAction: TextInputAction.next,
-                    obscureText: _passwordVisible1,
+                    obscureText: !_passwordVisible1,
                     decoration: InputDecoration(
                       hintText: 'New Password',
                       suffixIcon: IconButton(
@@ -77,7 +77,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
                   TextFormField(
                     controller: _confirmPasswordlController,
-                    obscureText: _passwordVisible2,
+                    obscureText: !_passwordVisible2,
                     decoration: InputDecoration(
                       hintText: 'Confirm Password',
                       suffixIcon: IconButton(
