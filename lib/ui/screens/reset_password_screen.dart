@@ -62,7 +62,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                           _passwordVisible1
                               ? Icons.visibility
                               : Icons.visibility_off,
-                          color: Theme.of(context).primaryColorDark,
+                          color: Colors.black45,
                         ),
                         onPressed: () {
                           setState(() {
@@ -85,7 +85,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                           _passwordVisible2
                               ? Icons.visibility
                               : Icons.visibility_off,
-                          color: Theme.of(context).primaryColorDark,
+                          color: Colors.black45,
                         ),
                         onPressed: () {
                           setState(() {
