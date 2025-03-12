@@ -12,7 +12,7 @@ class loginScreen extends StatefulWidget {
 }
 
 class _loginScreenState extends State<loginScreen> {
-  bool _passwordVisible=true;
+  bool _passwordVisible = true;
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordlController = TextEditingController();
@@ -58,7 +58,9 @@ class _loginScreenState extends State<loginScreen> {
                       hintText: 'Password',
                       suffixIcon: IconButton(
                         icon: Icon(
-                          _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                          _passwordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                           color: Theme.of(context).primaryColorDark,
                         ),
                         onPressed: () {
@@ -127,7 +129,6 @@ class _loginScreenState extends State<loginScreen> {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => RegisterScreen()));
   }
-
 
   @override
   void initState() {

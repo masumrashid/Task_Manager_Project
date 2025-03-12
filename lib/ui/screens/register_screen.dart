@@ -10,8 +10,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-
-  bool _passwordVisible= true;
+  bool _passwordVisible = true;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _firstNamelController = TextEditingController();
   final TextEditingController _lastNamelController = TextEditingController();
@@ -91,7 +90,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         hintText: 'Password',
                         suffixIcon: IconButton(
                           icon: Icon(
-                            _passwordVisible ? Icons.visibility : Icons.visibility_off,
+                            _passwordVisible
+                                ? Icons.visibility
+                                : Icons.visibility_off,
                             color: Theme.of(context).primaryColorDark,
                           ),
                           onPressed: () {
@@ -141,10 +142,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-  void _onTabSubmitButton(){
-
-  }
-
+  void _onTabSubmitButton() {}
 
   @override
   void initState() {

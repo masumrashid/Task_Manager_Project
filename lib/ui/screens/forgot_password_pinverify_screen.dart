@@ -107,7 +107,8 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
   }
 
   void _onTabSubmitButton() {
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>ResetPassword()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ResetPassword()));
   }
 
   void _onTapSigninButton() {

@@ -11,12 +11,12 @@ class ResetPassword extends StatefulWidget {
 }
 
 class _ResetPasswordState extends State<ResetPassword> {
-
   bool _passwordVisible1 = true;
   bool _passwordVisible2 = true;
 
   final TextEditingController _newPasswordlController = TextEditingController();
-  final TextEditingController _confirmPasswordlController = TextEditingController();
+  final TextEditingController _confirmPasswordlController =
+      TextEditingController();
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,6 @@ class _ResetPasswordState extends State<ResetPassword> {
                   ),
                   SizedBox(
                     height: 5,
-
                   ),
                   Text(
                     'Start a new password, minimum length of 8 letters',
@@ -56,12 +55,13 @@ class _ResetPasswordState extends State<ResetPassword> {
                     controller: _newPasswordlController,
                     textInputAction: TextInputAction.next,
                     obscureText: !_passwordVisible1,
-
                     decoration: InputDecoration(
                       hintText: 'New Password',
                       suffixIcon: IconButton(
                         icon: Icon(
-                          _passwordVisible1 ? Icons.visibility : Icons.visibility_off,
+                          _passwordVisible1
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                           color: Theme.of(context).primaryColorDark,
                         ),
                         onPressed: () {
@@ -82,7 +82,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                       hintText: 'Confirm Password',
                       suffixIcon: IconButton(
                         icon: Icon(
-                          _passwordVisible2 ? Icons.visibility : Icons.visibility_off,
+                          _passwordVisible2
+                              ? Icons.visibility
+                              : Icons.visibility_off,
                           color: Theme.of(context).primaryColorDark,
                         ),
                         onPressed: () {
@@ -135,19 +137,17 @@ class _ResetPasswordState extends State<ResetPassword> {
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(builder: (context) => loginScreen()),
-          (pre) => false,
+      (pre) => false,
     );
   }
-
 
   void _onTapSigninButton() {
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(builder: (context) => loginScreen()),
-          (pre) => false,
+      (pre) => false,
     );
   }
-
 
   @override
   void initState() {

@@ -7,13 +7,14 @@ class ForgotPasswordVerifyEmailScreen extends StatefulWidget {
   const ForgotPasswordVerifyEmailScreen({super.key});
 
   @override
-  State<ForgotPasswordVerifyEmailScreen> createState() => _ForgotPasswordVerifyEmailScreenState();
+  State<ForgotPasswordVerifyEmailScreen> createState() =>
+      _ForgotPasswordVerifyEmailScreenState();
 }
 
-class _ForgotPasswordVerifyEmailScreenState extends State<ForgotPasswordVerifyEmailScreen> {
-
-  final TextEditingController _emailController =TextEditingController();
- final GlobalKey<FormState> formkey= GlobalKey<FormState>();
+class _ForgotPasswordVerifyEmailScreenState
+    extends State<ForgotPasswordVerifyEmailScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +22,6 @@ class _ForgotPasswordVerifyEmailScreenState extends State<ForgotPasswordVerifyEm
         children: [
           ScreenBackground(
               child: Padding(
-
             padding: const EdgeInsets.all(32),
             child: Form(
               key: formkey,
@@ -35,12 +35,16 @@ class _ForgotPasswordVerifyEmailScreenState extends State<ForgotPasswordVerifyEm
                     'Your Email Address',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Text(
                     'A 6 Digit Verification Code Will Be Sent To tour Email',
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.grey),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(color: Colors.grey),
                   ),
-
                   const SizedBox(
                     height: 24,
                   ),
@@ -90,9 +94,9 @@ class _ForgotPasswordVerifyEmailScreenState extends State<ForgotPasswordVerifyEm
     );
   }
 
-  void _onTabSubmitButton(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>PinVerificationScreen()));
-
+  void _onTabSubmitButton() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => PinVerificationScreen()));
   }
 
   void _onTapSigninButton() {
@@ -105,5 +109,4 @@ class _ForgotPasswordVerifyEmailScreenState extends State<ForgotPasswordVerifyEm
     _emailController.dispose();
     super.dispose();
   }
-
 }
