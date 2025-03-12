@@ -19,6 +19,13 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _moveTologinScreen();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: ScreenBackground(
@@ -26,10 +33,5 @@ class _SplashScreenState extends State<SplashScreen> {
     ));
   }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _moveTologinScreen();
-  }
+
 }
