@@ -104,7 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 24,
+                      height: 24
                     ),
                     ElevatedButton(
                       onPressed: _onTabSubmitButton,

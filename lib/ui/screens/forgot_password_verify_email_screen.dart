@@ -50,7 +50,6 @@ class _ForgotPasswordVerifyEmailScreenState
                   ),
                   TextFormField(
                     controller: _emailController,
-                    textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
                       hintText: 'Email',
