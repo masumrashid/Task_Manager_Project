@@ -15,8 +15,7 @@ class _ResetPasswordState extends State<ResetPassword> {
   bool _passwordVisible2 = true;
 
   final TextEditingController _newPasswordlController = TextEditingController();
-  final TextEditingController _confirmPasswordlController =
-      TextEditingController();
+  final TextEditingController _confirmPasswordlController = TextEditingController();
   final GlobalKey<FormState> formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
