@@ -23,110 +23,112 @@ class _ResetPasswordState extends State<ResetPassword> {
       body: Stack(
         children: [
           ScreenBackground(
-              child: Padding(
-            padding: const EdgeInsets.all(32),
-            child: Form(
-              key: formkey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 100,
-                  ),
-                  Text(
-                    'Set Password',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'Start a new password, minimum length of 8 letters',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge
-                        ?.copyWith(color: Colors.grey),
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  TextFormField(
-                    controller: _newPasswordlController,
-                    textInputAction: TextInputAction.next,
-                    obscureText: !_passwordVisible1,
-                    decoration: InputDecoration(
-                      hintText: 'New Password',
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _passwordVisible1
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          color: Colors.black45,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            _passwordVisible1 = !_passwordVisible1;
-                          });
-                        },
-                      ),
+              child: SingleChildScrollView(
+                child: Padding(
+                            padding: const EdgeInsets.all(32),
+                            child: Form(
+                key: formkey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 100,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    controller: _confirmPasswordlController,
-                    obscureText: !_passwordVisible2,
-                    decoration: InputDecoration(
-                      hintText: 'Confirm Password',
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _passwordVisible2
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          color: Colors.black45,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            _passwordVisible2 = !_passwordVisible2;
-                          });
-                        },
-                      ),
+                    Text(
+                      'Set Password',
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  ElevatedButton(
-                    onPressed: _onTabSubmitButton,
-                    child: const Text('Confirm'),
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  Center(
-                    child: RichText(
-                        text: TextSpan(
-                            style: const TextStyle(
-                                color: Colors.black45,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600),
-                            children: [
-                          TextSpan(text: "Already have An Account? "),
-                          TextSpan(
-                            text: "Sign In",
-                            style: const TextStyle(
-                                color: Colors.green,
-                                fontWeight: FontWeight.w600),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = _onTapSigninButton,
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'Start a new password, minimum length of 8 letters',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(color: Colors.grey),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    TextFormField(
+                      controller: _newPasswordlController,
+                      textInputAction: TextInputAction.next,
+                      obscureText: !_passwordVisible1,
+                      decoration: InputDecoration(
+                        hintText: 'New Password',
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _passwordVisible1
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: Colors.black45,
                           ),
-                        ])),
-                  )
-                ],
-              ),
-            ),
-          ))
+                          onPressed: () {
+                            setState(() {
+                              _passwordVisible1 = !_passwordVisible1;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                    TextFormField(
+                      controller: _confirmPasswordlController,
+                      obscureText: !_passwordVisible2,
+                      decoration: InputDecoration(
+                        hintText: 'Confirm Password',
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _passwordVisible2
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: Colors.black45,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _passwordVisible2 = !_passwordVisible2;
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    ElevatedButton(
+                      onPressed: _onTabSubmitButton,
+                      child: const Text('Confirm'),
+                    ),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    Center(
+                      child: RichText(
+                          text: TextSpan(
+                              style: const TextStyle(
+                                  color: Colors.black45,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600),
+                              children: [
+                            TextSpan(text: "Already have An Account? "),
+                            TextSpan(
+                              text: "Sign In",
+                              style: const TextStyle(
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.w600),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = _onTapSigninButton,
+                            ),
+                          ])),
+                    )
+                  ],
+                ),
+                            ),
+                          ),
+              ))
         ],
       ),
     );

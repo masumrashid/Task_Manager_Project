@@ -21,86 +21,88 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
       body: Stack(
         children: [
           ScreenBackground(
-              child: Padding(
-            padding: const EdgeInsets.all(32),
-            child: Form(
-              key: formkey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 100,
-                  ),
-                  Text(
-                    'Pin Verification',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'A 6 Digit Verification Pin Has Been Sent To tour Email',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge
-                        ?.copyWith(color: Colors.grey),
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  PinCodeTextField(
-                    length: 6,
-                    obscureText: false,
-                    animationType: AnimationType.fade,
-                    keyboardType: TextInputType.number,
-                    controller: _pineCodeController,
-                    pinTheme: PinTheme(
-                        shape: PinCodeFieldShape.box,
-                        borderRadius: BorderRadius.circular(8),
-                        fieldHeight: 50,
-                        fieldWidth: 40,
-                        activeFillColor: Colors.white,
-                        activeColor: Colors.white,
-                        selectedFillColor: Colors.white,
-                        inactiveFillColor: Colors.white),
-                    animationDuration: Duration(milliseconds: 300),
-                    backgroundColor: Colors.transparent,
-                    enableActiveFill: true,
-                    appContext: context,
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  ElevatedButton(
-                    onPressed: _onTabSubmitButton,
-                    child: const Text('Verify'),
-                  ),
-                  const SizedBox(
-                    height: 32,
-                  ),
-                  Center(
-                    child: RichText(
-                        text: TextSpan(
-                            style: const TextStyle(
-                                color: Colors.black45,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600),
-                            children: [
-                          TextSpan(text: "Already have An account? "),
-                          TextSpan(
-                            text: "Sign In",
-                            style: const TextStyle(
-                                color: Colors.green,
-                                fontWeight: FontWeight.w600),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = _onTapSigninButton,
+              child: SingleChildScrollView(
+                child: Padding(
+                            padding: const EdgeInsets.all(32),
+                            child: Form(
+                key: formkey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 100,
+                    ),
+                    Text(
+                      'Pin Verification',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'A 6 Digit Verification Pin Has Been Sent To tour Email',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge
+                          ?.copyWith(color: Colors.grey),
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    PinCodeTextField(
+                      length: 6,
+                      obscureText: false,
+                      animationType: AnimationType.fade,
+                      keyboardType: TextInputType.number,
+                      controller: _pineCodeController,
+                      pinTheme: PinTheme(
+                          shape: PinCodeFieldShape.box,
+                          borderRadius: BorderRadius.circular(8),
+                          fieldHeight: 50,
+                          fieldWidth: 40,
+                          activeFillColor: Colors.white,
+                          activeColor: Colors.white,
+                          selectedFillColor: Colors.white,
+                          inactiveFillColor: Colors.white),
+                      animationDuration: Duration(milliseconds: 300),
+                      backgroundColor: Colors.transparent,
+                      enableActiveFill: true,
+                      appContext: context,
+                    ),
+                    const SizedBox(
+                      height: 24,
+                    ),
+                    ElevatedButton(
+                      onPressed: _onTabSubmitButton,
+                      child: const Text('Verify'),
+                    ),
+                    const SizedBox(
+                      height: 32,
+                    ),
+                    Center(
+                      child: RichText(
+                          text: TextSpan(
+                              style: const TextStyle(
+                                  color: Colors.black45,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600),
+                              children: [
+                            TextSpan(text: "Already have An account? "),
+                            TextSpan(
+                              text: "Sign In",
+                              style: const TextStyle(
+                                  color: Colors.green,
+                                  fontWeight: FontWeight.w600),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = _onTapSigninButton,
+                            ),
+                          ])),
+                    )
+                  ],
+                ),
+                            ),
                           ),
-                        ])),
-                  )
-                ],
-              ),
-            ),
-          ))
+              ))
         ],
       ),
     );
