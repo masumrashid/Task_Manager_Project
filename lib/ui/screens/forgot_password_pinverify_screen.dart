@@ -53,6 +53,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                     obscureText: false,
                     animationType: AnimationType.fade,
                     keyboardType: TextInputType.number,
+                    controller: _pineCodeController,
                     pinTheme: PinTheme(
                         shape: PinCodeFieldShape.box,
                         borderRadius: BorderRadius.circular(8),
@@ -65,7 +66,6 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                     animationDuration: Duration(milliseconds: 300),
                     backgroundColor: Colors.transparent,
                     enableActiveFill: true,
-                    controller: _pineCodeController,
                     appContext: context,
                   ),
                   const SizedBox(
@@ -114,7 +114,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
   void _onTapSigninButton() {
     Navigator.pushAndRemoveUntil(
       context,
-      MaterialPageRoute(builder: (context) => loginScreen()),
+      MaterialPageRoute(builder: (context) => const loginScreen()),
       (pre) => false,
     );
   }
