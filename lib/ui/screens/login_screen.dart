@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/ui/screens/forgot_password_verify_email_screen.dart';
+import 'package:task_manager/ui/screens/main_bottom_nav_screen.dart';
 import 'package:task_manager/ui/screens/register_screen.dart';
 import 'package:task_manager/ui/widgets/screen_background.dart';
 
@@ -24,9 +25,9 @@ class _loginScreenState extends State<loginScreen> {
         children: [
           ScreenBackground(
               child: SingleChildScrollView(
-                child: Padding(
-                            padding: const EdgeInsets.all(32),
-                            child: Form(
+            child: Padding(
+              padding: const EdgeInsets.all(32),
+              child: Form(
                 key: formkey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,15 +111,20 @@ class _loginScreenState extends State<loginScreen> {
                     )
                   ],
                 ),
-                            ),
-                          ),
-              ))
+              ),
+            ),
+          ))
         ],
       ),
     );
   }
 
-  void _onTabSubmitButton() {}
+  void _onTabSubmitButton() {
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => MainBottomNavScreen()),
+        (predicate) => false);
+  }
 
   void _onTapForgotPasswordButton() {
     Navigator.push(
