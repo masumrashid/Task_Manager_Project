@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:task_manager/ui/screens/add_new_task_screen.dart';
 import '../widgets/summary_card.dart';
 import '../widgets/task_card.dart';
 
@@ -23,7 +23,10 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
               // primary: false,
               // shrinkWrap: true,
               itemBuilder: (context, index) {
-                return  TaskCard(text: 'New', color: Colors.blue,);
+                return TaskCard(
+                  text: 'New',
+                  color: Colors.blue,
+                );
               },
               separatorBuilder: (context, index) => const SizedBox(
                 height: 10,
@@ -33,7 +36,12 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => AddNewTask()),
+              (predicate) => false);
+        },
         child: Icon(Icons.add),
       ),
     );

@@ -16,16 +16,15 @@ class MainBottomNavScreen extends StatefulWidget {
 class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   int _selectedNav = 0;
 
- final List<Widget> _screens =[
-    NewTaskScreen(),
-    ProgressTaskScreen(),
-    CompleteTaskScreen(),
-    CanceledTaskScreen(),
+  final List<Widget> _screens = [
+    const NewTaskScreen(),
+    const ProgressTaskScreen(),
+    const CompleteTaskScreen(),
+    const CanceledTaskScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: const TMAppbar(),
       body: _screens[_selectedNav],
@@ -39,10 +38,10 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
           NavigationDestination(icon: Icon(Icons.new_label), label: 'New'),
           NavigationDestination(icon: Icon(Icons.ad_units), label: 'Progress'),
           NavigationDestination(icon: Icon(Icons.done), label: 'Complete'),
-          NavigationDestination(icon: Icon(Icons.cancel_outlined), label: 'Canceled'),
+          NavigationDestination(
+              icon: Icon(Icons.cancel_outlined), label: 'Canceled'),
         ],
       ),
     );
   }
 }
-
