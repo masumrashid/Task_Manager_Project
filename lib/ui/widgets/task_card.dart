@@ -42,8 +42,8 @@ class TaskCard extends StatelessWidget {
                   side: BorderSide.none,
                 ),
                 const Spacer(),
-                IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
+                IconButton(onPressed: () {}, icon: Icon(Icons.delete,color: Colors.red,)),
+                IconButton(onPressed: () {}, icon: Icon(Icons.edit,color: Colors.blue,)),
               ],
             )
           ],
