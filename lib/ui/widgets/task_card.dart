@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TaskCard extends StatelessWidget {
   String text;
-  Color? color;
+  Color ? color;
    TaskCard({
     super.key,
      required this.text,
