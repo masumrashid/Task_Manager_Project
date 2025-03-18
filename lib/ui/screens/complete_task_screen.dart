@@ -18,7 +18,7 @@ class _CompleteTaskScreenState extends State<CompleteTaskScreen> {
           // primary: false,
           // shrinkWrap: true,
           itemBuilder: (context, index) {
-            return  TaskCard(text: 'Complete', color: Colors.green);
+            return TaskCard(text: 'Complete', color: Colors.green);
           },
           separatorBuilder: (context, index) => const SizedBox(
             height: 10,

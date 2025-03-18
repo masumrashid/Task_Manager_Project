@@ -20,7 +20,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
     const NewTaskScreen(),
     const ProgressTaskScreen(),
     const CompleteTaskScreen(),
-    const CanceledTaskScreen(),
+    const CancelledTaskScreen(),
   ];
 
   @override

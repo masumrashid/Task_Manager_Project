@@ -50,6 +50,7 @@ class _AddNewTaskState extends State<AddNewTask> {
                       height: 16,
                     ),
                     TextFormField(
+                      maxLines: 6,
                       controller: _descriptionController,
                       decoration: InputDecoration(
                         hintText: 'Description',
@@ -76,11 +77,11 @@ class _AddNewTaskState extends State<AddNewTask> {
   }
 
   void _onTabSubmitButton() {
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(builder: (context) => const NewTaskScreen()),
-      (pre) => false,
-    );
+    // Navigator.pushAndRemoveUntil(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => const NewTaskScreen()),
+    //   (pre) => false,
+    // );
   }
 
   @override

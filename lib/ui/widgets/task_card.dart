@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 
 class TaskCard extends StatelessWidget {
   String text;
-  Color ? color;
-   TaskCard({
+  Color? color;
+  TaskCard({
     super.key,
-     required this.text,
-     required this.color,
-
+    required this.text,
+    required this.color,
   });
 
   @override
@@ -42,8 +41,18 @@ class TaskCard extends StatelessWidget {
                   side: BorderSide.none,
                 ),
                 const Spacer(),
-                IconButton(onPressed: () {}, icon: Icon(Icons.delete,color: Colors.red,)),
-                IconButton(onPressed: () {}, icon: Icon(Icons.edit,color: Colors.blue,)),
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                    )),
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.edit,
+                      color: Colors.blue,
+                    )),
               ],
             )
           ],

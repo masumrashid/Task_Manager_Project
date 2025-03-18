@@ -22,9 +22,9 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
         children: [
           ScreenBackground(
               child: SingleChildScrollView(
-                child: Padding(
-                            padding: const EdgeInsets.all(32),
-                            child: Form(
+            child: Padding(
+              padding: const EdgeInsets.all(32),
+              child: Form(
                 key: formkey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,9 +100,9 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                     )
                   ],
                 ),
-                            ),
-                          ),
-              ))
+              ),
+            ),
+          ))
         ],
       ),
     );

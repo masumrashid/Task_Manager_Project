@@ -37,10 +37,8 @@ class _NewTaskScreenState extends State<NewTaskScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (context) => AddNewTask()),
-              (predicate) => false);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AddNewTask()));
         },
         child: Icon(Icons.add),
       ),

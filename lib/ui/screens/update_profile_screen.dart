@@ -1,15 +1,15 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/ui/widgets/screen_background.dart';
+import 'package:task_manager/ui/widgets/tm_app_bar.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+class UpdateProfileScreen extends StatefulWidget {
+  const UpdateProfileScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<UpdateProfileScreen> createState() => _UpdateProfileScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   bool _passwordVisible = true;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _firstNamelController = TextEditingController();
@@ -17,9 +17,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _phoneNumberlController = TextEditingController();
   final TextEditingController _passwordlController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: TMAppbar(
+        formUpdateProfileScreen: true,
+      ),
       body: Stack(
         children: [
           ScreenBackground(
@@ -32,14 +36,38 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 100,
+                      height: 60,
                     ),
                     Text(
-                      'Join With Us',
+                      'Update Profile',
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(
                       height: 24,
+                    ),
+                    Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        children: [
+                          _buildphotoSelectWidget(),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Select Your Photo',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 16,
                     ),
                     TextFormField(
                       textInputAction: TextInputAction.next,
@@ -108,28 +136,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       onPressed: _onTabSubmitButton,
                       child: const Icon(Icons.arrow_circle_right_outlined),
                     ),
-                    const SizedBox(
-                      height: 32,
-                    ),
-                    Center(
-                      child: RichText(
-                          text: TextSpan(
-                              style: const TextStyle(
-                                  color: Colors.black45,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600),
-                              children: [
-                            TextSpan(text: "Already have An account? "),
-                            TextSpan(
-                              text: "Sign In",
-                              style: const TextStyle(
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.w600),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = _onTapSigninButton,
-                            ),
-                          ])),
-                    )
                   ],
                 ),
               ),
@@ -140,7 +146,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
+  Widget _buildphotoSelectWidget() {
+    return GestureDetector(
+      onTap: _ontabPhotoSelecte,
+      child: Container(
+        height: 50,
+        width: 80,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(8),
+              bottomLeft: Radius.circular(8),
+            ),
+            color: Colors.black45),
+        alignment: Alignment.center,
+        child: Text(
+          'Photos',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+  }
+
   void _onTabSubmitButton() {}
+
+  void _ontabPhotoSelecte() {}
+
+  @override
+  void initState() {
+    _passwordVisible = false;
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -150,9 +185,5 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _phoneNumberlController.dispose();
     _passwordlController.dispose();
     super.dispose();
-  }
-
-  void _onTapSigninButton() {
-    Navigator.pop(context);
   }
 }

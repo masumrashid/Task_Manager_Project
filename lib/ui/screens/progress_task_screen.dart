@@ -18,7 +18,7 @@ class _ProgressTaskScreenState extends State<ProgressTaskScreen> {
           // primary: false,
           // shrinkWrap: true,
           itemBuilder: (context, index) {
-            return  TaskCard(text: 'Progress', color: Colors.purple);
+            return TaskCard(text: 'Progress', color: Colors.purple);
           },
           separatorBuilder: (context, index) => const SizedBox(
             height: 10,
